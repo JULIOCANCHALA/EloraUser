@@ -48,6 +48,21 @@
         android:background="@color/color1"
         ></LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CERRADO"
+        android:textStyle="bold"
+        android:textSize="48sp"
+        android:layout_gravity="center"
+        android:textColor="@color/color5"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:id="@+id/letre"
+        />
+
+
     <ListView
         android:id="@+id/list"
         android:layout_height="wrap_content"

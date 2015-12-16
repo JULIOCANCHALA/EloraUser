@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.ChildEventListener;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Firebase mRef;
     ListView listView ;
+    TextView let;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         listView = (ListView) findViewById(R.id.list);
         mRef = new Firebase("https://eloraserver.firebaseio.com/");
+        let=(TextView)findViewById(R.id.letre);
 
         Firebase productos = mRef.child("Productos");
 
@@ -41,10 +44,12 @@ public class MainActivity extends AppCompatActivity {
                 if(es.equals("Cerrado"))
                 {
                     listView.setVisibility(View.INVISIBLE);
+                    let.setVisibility(View.VISIBLE);
                 }
                 if(es.equals("Abierto"))
                 {
                     listView.setVisibility(View.VISIBLE);
+                    let.setVisibility(View.GONE);
                 }
             }
 
